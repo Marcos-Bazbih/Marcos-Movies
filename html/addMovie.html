@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcos Movies - Add Movie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/534c2fa5ea.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/addMovie.css">
+</head>
+
+<body>
+    <video src="../media/Cinema - 35175.mp4" autoplay loop muted id="bgVideo"></video>
+    <section id="bigContainer">
+        <header>
+            <section id="headerContainer">
+                <article id="logosHeader">
+                    <img src="../media/indi_logo-removebg-preview.png" alt="indi.com logo" id="indiLogo">
+                    <h1><span>M</span>arcos <span>M</span>ovies</h1>
+                    <a href="https://www.tech-career.org" target="blank">
+                        <img src="../media/tech_logo-removebg-preview.png" alt="tech career logo" id="techLogo">
+                    </a>
+                </article>
+                <nav id="navbar">
+                    <ul>
+                        <li><a href="../index.html" class="leftNavLinks">Home</a></li>
+                        <li><a href="moviesCards.html" class="leftNavLinks">Movies Cards</a></li>
+                        <li><a href="moviesTable.html">Movies Table</a></li>
+                        <li><a href="addMovie.html" id="activePage">Add Movie</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </header>
+        <main>
+            <section id="formContainer">
+                <form id="postMovieForm">
+                    <label>Movie Name:</label>
+                    <input type="text" id="nameInput">
+                    <label>Movie Image:</label>
+                    <input type="text" id="imgInput">
+                    <label>Movie Rating:</label>
+                    <input type="number" id="ratingInput">
+                    <label>Movie Synopsis:</label>
+                    <input type="text" id="synopsisInput">
+                    <label>Movie Link:</label>
+                    <input type="text" id="linkInput">
+                    <button>SEND</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <div id="contactFooter">
+                <a href="https://www.linkedin.com/in/marcos-bazbih-202757202/" target="blank"><i
+                        class="fab fa-linkedin"></i></a>
+                <p>Contact Me Here</p>
+                <a href="https://github.com/Marcos-Bazbih" target="blank"><i class="fab fa-github contactIcons"></i></a>
+            </div>
+        </footer>
+    </section>
+    <script src="../js/addMovie.js"></script>
+</body>
+
+</html>
