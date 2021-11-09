@@ -28,7 +28,6 @@
     height: 50%;
 }
 #logosHeader{
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,8 +41,9 @@ span{
 
 
 #indiLogo, #techLogo{
-    position: absolute;
+    position: fixed;
     width: 11vw;
+    z-index: 100;
 }
 #indiLogo{
     top: 0;

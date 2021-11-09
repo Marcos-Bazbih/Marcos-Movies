@@ -87,15 +87,45 @@ span{
 }
 
 
-
-
-table{
+#tableContainer{
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
 }
-td, th, table{
+
+
+
+
+#tableContainer #moviesTable{
+    background: rgba(255, 255, 255, 0.8);
+    width: 50%;
+    height: 100%;
+
+}
+
+
+
+
+td, th, #moviesTable{
     border: 1px solid black;
+    border-collapse: collapse;
+    /* font-size: 22px; */
+
 }
+#moviesTable th{
+    font-family: 'Fredericka the Great', cursive;
+}
+#moviesTable tr td{
+    /* overflow: auto; */
+    /* max-width: 25vw; */
+    /* max-height: 20vh; */
+    /* width: 25vw; */
+    /* height: 20vh; */
+    font-family: 'Berkshire Swash', cursive;
+}
+
+
 
 
 

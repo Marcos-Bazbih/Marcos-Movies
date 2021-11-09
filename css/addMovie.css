@@ -92,21 +92,44 @@ span{
     height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 #postMovieForm{
-    background: rgba(0, 0, 0, 0.8);
-    width: 65%;
-    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    width: 45%;
+    height: 95%;
+    border-radius: 15%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     color: white;
 }
-#postMovieForm input{
+/* #postMovieForm input{
     width: 50%;
     height: 8%;
+} */
+#postMovieForm label{
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 20px;
 }
+#postMovieForm button{
+    cursor: pointer;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 25px;
+    color: #00224f;
+    font-weight: bold;
+    transition: 0.1s;
+}
+#postMovieForm button:hover{
+    color: white;
+    border-color: #00224f;
+    background:#00224f;
+}
+
+
+
+
 
 
 
