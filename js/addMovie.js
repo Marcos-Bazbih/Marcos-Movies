@@ -1,31 +1,37 @@
-class Movie {
-    constructor(movieName, image, linkToMovie, synopsis, rating) {
-        this.movieName = movieName;
-        this.image = image;
-        this.linkToMovie = linkToMovie;
-        this.synopsis = synopsis;
-        this.rating = rating;
-    }
-}
-
-async function addMoviePromise(bodyObj) {
+async function getApi(api, obj) {
     try {
-        return await fetch("https://moviesmern.herokuapp.com/movies/saveMovie", bodyObj)
-            .then(res => res.json())
-    } catch (err) {
+        return await fetch(api, obj)
+            .then(response => response.json());
+    }
+    catch (err) {
         return err;
     }
 }
 
-postMovieForm.onsubmit = (event) => {
-    event.preventDefault();
+class Movie {
+    movieName;
+    image;
+    synopsis;
+    linkToMovie;
+    rating;
+    constructor(MovieName, MovieIMage, MovieSynopsis, MovieLink, MovieRating) {
+        this.movieName = MovieName;
+        this.image = MovieIMage;
+        this.synopsis = MovieSynopsis;
+        this.linkToMovie = MovieLink;
+        this.rating = MovieRating;
 
-    let addedMovie = new Movie(movieName.value, image.value, linkToMovie.value, synopsis.value, rating.value);
+    }
+}
+
+addMovie.onclick = () => {
+    let movie = new Movie(movieName.value, image.value, synopsis.value, linkToMovie.value, Number(rating.value))
     let options = {
-        method: 'POST',
-        body: JSON.stringify({ addedMovie }),
+        method: "POST",
+        body: JSON.stringify({ movie }),
         headers: { 'Content-Type': 'application/json' }
     }
-    addMoviePromise(options)
+    getApi("https://moviesmern.herokuapp.com/movies/saveMovie", options)
         .then(res => console.log(res))
+        .finally(alert("your movie has been added"))
 }

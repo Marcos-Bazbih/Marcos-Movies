@@ -1,3 +1,9 @@
+:root{
+    --mainFont: 'Berkshire Swash', cursive;
+    --headersFont: 'Macondo', cursive;
+    --darkBlue: #00224f;
+    --lightBlue: #51d7ea;
+}
 *{
     margin: 0;
     padding: 0;
@@ -14,9 +20,6 @@
     display: grid;
     grid-template-rows: 30vh auto 5vh;
 }
-
-
-
 #headerContainer{
     width: 100%;
     height: 100%;
@@ -28,21 +31,19 @@
     height: 50%;
 }
 #logosHeader{
-    position: relative;
+    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 60px;    
-    font-family: 'Fredericka the Great', cursive;
+    font-size: 70px;  
+    font-weight: bold;  
+    font-family: var(--headersFont);
 }
 span{
-    color:#51d7ea;
+    color:var(--lightBlue);
 }
-
-
-
 #indiLogo, #techLogo{
-    position: absolute;
+    position: fixed;
     width: 11vw;
 }
 #indiLogo{
@@ -55,9 +56,6 @@ span{
     height: 16vh;
     right: 1vw;
 }
-
-
-
 #navbar ul{
     display: flex;
     align-items: center;
@@ -72,9 +70,9 @@ span{
     border-bottom: 3.5px solid transparent;
     border-radius: 0% 25%;
     text-decoration: none;
-    font-family: 'Berkshire Swash', cursive;
+    font-family: var(--mainFont);
     font-weight: bold;
-    color: #00224f;
+    color: var(--darkBlue);
     font-size: 30px;
     transition: 0.2s;
 }
@@ -83,51 +81,51 @@ span{
     color: white;
 }
 #navbar ul li a:hover, #navbar ul li #activePage{
-    border-color: #51d7ea;
+    border-color: var(--lightBlue);
 }
 
-
-#tableContainer{
-    width: 100%;
-    height: 100%;
+#tableBox{
     display: flex;
     justify-content: center;
-}
-
-
-
-
-#tableContainer #moviesTable{
-    background: rgba(255, 255, 255, 0.8);
-    width: 50%;
+    width: 100%;
     height: 100%;
-
 }
 
-
-
-
-td, th, #moviesTable{
+#moviesTable, th, td{
     border: 1px solid black;
     border-collapse: collapse;
-    /* font-size: 22px; */
-
+} 
+#moviesTable{
+    background: rgba(255, 255, 255, 0.8);
+    width: 95%;
+    height: 100%;
+    text-align: center;
 }
-#moviesTable th{
-    font-family: 'Fredericka the Great', cursive;
+#moviesTable tr th{
+    background: rgba(0, 0, 0, 0.3);
+    font-family: var(--headersFont);
+    font-size: 30px;
+    color: var(--darkBlue);
 }
-#moviesTable tr td{
-    /* overflow: auto; */
-    /* max-width: 25vw; */
-    /* max-height: 20vh; */
-    /* width: 25vw; */
-    /* height: 20vh; */
-    font-family: 'Berkshire Swash', cursive;
+#moviesTable tr td{ 
+    overflow-wrap: break-word;
+    overflow: auto;
+    max-width: 20vw;
+    max-height: 10vh;
+    font-family: var(--mainFont);
+    font-size: 20px;
 }
-
-
-
-
+#moviesTable tr td:nth-child(5){ 
+    background: rgba(0, 0, 0, 0.2);
+    transition: 0.1s;
+}
+#moviesTable tr td:nth-child(5):hover{ 
+    background: none;
+}
+#moviesTable tr td a{ 
+    text-decoration: none;
+    color: var(--darkBlue);
+}
 
 
 
@@ -140,7 +138,7 @@ td, th, #moviesTable{
     color: white;
     width: 100%;
     height: 100%;
-    font-family: 'Berkshire Swash', cursive;
+    font-family: var(--mainFont);
 }
 #contactFooter a{
     margin: 0 5vw;

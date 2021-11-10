@@ -1,3 +1,5 @@
+document.querySelector('video').playbackRate = 0.50;
+
 const SLIDER_IMAGES = [
     "https://m.media-amazon.com/images/M/MV5BMjUxMDQwNjcyNl5BMl5BanBnXkFtZTgwNzcwMzc0MTI@._V1_.jpg",
     "https://m.media-amazon.com/images/I/810SlMj1+eL._AC_SY741_.jpg",
