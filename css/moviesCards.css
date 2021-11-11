@@ -222,7 +222,15 @@ span{
     border-radius: 15%;
     margin-bottom: 5vh;
     font-family: var(--headersFont);
+    transition: 0.2s;
 }
+.movieCard:hover{
+    background: rgba(255, 255, 255, 0.6);
+}
+.movieCard:hover> .cardInfoBox{
+    color: black;
+}
+
 .cardImgBox{
     width: 100%;
     height: 60%;
@@ -272,7 +280,7 @@ span{
     font-size: 16px;
     cursor: pointer;
     transition: 0.1s;
-    border: 3px solid transparent;
+    border: 3px solid black;
     border-radius:  0 50%;
 }
 .btnsBox button:hover{
