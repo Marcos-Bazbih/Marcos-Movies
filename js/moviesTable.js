@@ -21,7 +21,7 @@ function addMovieToTable(arr, table) {
                 <td>${item.image}</td>
                 <td>${item.synopsis}</td>
                 <td><a href=${item.linkToMovie} target="blank">more info</a></td>
-                <td>${item.rating}</td>
+                <td>${item.rating}/10</td>
                 <td>${item.date}</td>
             </tr>`
     }

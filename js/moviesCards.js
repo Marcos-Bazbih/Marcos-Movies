@@ -76,7 +76,7 @@ function moreInfo(movie) {
     movieInfo.innerHTML =
         `<h1>${movie.movieName}</h1>
                 <h2>Id: ${movie._id}</h2>
-                <h2>Rating: ${movie.rating}</h2>
+                <h2>Rating: ${movie.rating}/10</h2>
                 <h2>Date: ${movie.date}</h2>
                 <h2 id="synopsis">${movie.synopsis}</h2>
                 <h2><a href=${movie.linkToMovie} target="blank">more info</a></h2>
