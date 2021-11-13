@@ -30,7 +30,7 @@ postMovieForm.onsubmit = (event) => {
 }
 
 
-updateMovieForm.onsubmit = (event) => {
+editMovieForm.onsubmit = (event) => {
     event.preventDefault();
     
     let movie = new Movie(putMovieName.value, putImage.value, putSynopsis.value, putLinkToMovie.value, Number(putRating.value))
