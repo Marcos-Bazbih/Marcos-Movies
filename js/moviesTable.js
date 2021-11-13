@@ -1,15 +1,7 @@
-document.querySelector('video').playbackRate = 0.50;
+slowDownBgVideo();
 
-async function getAllMovies() {
-    try {
-        return await fetch("https://moviesmern.herokuapp.com/movies/all")
-            .then(res => res.json())
-    } catch (err) {
-        return err
-    }
-}
-getAllMovies()
-    .then(res => addMovieToTable(res.data, moviesTable))
+getFromApi(tableBox, BASIC_API+"all")
+    .then(res => addMovieToTable(res.data, tableBody))
 
 
 function addMovieToTable(arr, table) {

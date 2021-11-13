@@ -1,4 +1,4 @@
-document.querySelector('video').playbackRate = 0.50;
+slowDownBgVideo();
 
 const SLIDER_IMAGES = [
     "https://m.media-amazon.com/images/M/MV5BMjUxMDQwNjcyNl5BMl5BanBnXkFtZTgwNzcwMzc0MTI@._V1_.jpg",

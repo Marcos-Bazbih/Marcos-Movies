@@ -21,7 +21,7 @@ body{
 }
 #bigContainer{
     display: grid;
-    grid-template-rows: 30vh auto 5vh;
+    grid-template-rows: 30vh auto 7vh;
 }
 #headerContainer{
     width: 100%;
@@ -165,18 +165,48 @@ span{
 }
 
 
+#sortAndSearchBox{
+    display: flex;
+    height: 20vh;
+    width: 100%;
+}
 
+#sortBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+#sortBox h2{
+    font-family: var(--headersFont);
+    margin-right: 3vw;
+    color: white;
+    font-size: 50px;
+}
+#sortSelect{
+    background: var(--darkBlue);
+    color: var(--lightBlue);
+    font-family: var(--mainFont);
+    padding: 5px;
+    font-size: 25px;
+    border: none;
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+    border-radius: 0% 15%;
+    cursor: pointer;
+}
 
 #searchBox{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20vh;
-    width: 100%;
+    width: 50%;
+    height: 100%;
 }
 #searchBox input{
     height: 30%;
-    width: 30%;
+    width: 60%;
     margin-right: 3%;
     border: 2px solid black;
     background: rgba(0, 0, 0, 0.7);
@@ -299,23 +329,36 @@ span{
     border-color: var(--darkBlue);
 }
 
-#contactFooter{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.7);
-    font-size: 3vh;
-    color: white;
-    width: 100%;
+#footerBox{
     height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    display: flex;
     font-family: var(--mainFont);
 }
-#contactFooter a{
-    margin: 0 5vw;
-    text-decoration: none;
-    color: var(--lightBlue);
-    transition: 0.2s;
+#contactFooter, #myProjects{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 3.5vh;
 }
-#contactFooter a:hover{
-    color:white;
+#contactFooter{
+    border-right: 1px solid black;
+}
+#myProjects{
+    border-left: 1px solid black;
+}
+#contactFooter a, #myProjects a{
+    text-decoration: none;
+    color: black;
+    transition: 0.2s;
+    height: 100%;
+}
+#contactFooter a{
+    height: 50%;
+}
+#myProjects img{
+    height: 100%;
 }

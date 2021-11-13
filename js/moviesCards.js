@@ -1,44 +1,68 @@
-document.querySelector('video').playbackRate = 0.50;
+slowDownBgVideo();
 
-async function getAllMovies(api) {
-    try {
-        return await fetch(api)
-            .then(res => res.json())
-            .then(res => res.data)
-    } catch (err) {
-        return err;
-    }
-}
-getAllMovies("https://moviesmern.herokuapp.com/movies/all")
-    .then(res => addMovieCard(res))
+getFromApi(cardsContainer, BASIC_API + "all")
+    .then(res => addMovieCard(res.data))
 
 searchBtn.onclick = () => {
-    getAllMovies("https://moviesmern.herokuapp.com/movies/movie/searchByName/" + searchInput.value)
-        .then(res => addMovieCard(res))
+    getFromApi(cardsContainer, BASIC_API + SEARCH_ENDPOINT + searchInput.value)
+        .then(res => addMovieCard(res.data))
 }
 
 
 
-async function getMovieById(id, options) {
-    try {
-        return await fetch(`https://moviesmern.herokuapp.com/movies/movie/${id}`, options)
-            .then(res => res.json())
-            .then(res => console.log(res))
-    } catch (err) {
-        return err;
+function sortByName(a, b) {
+    if (a.movieName.toLowerCase() < b.movieName.toLowerCase()) {
+      return -1;
+    }
+    if (a.movieName.toLowerCase() > b.movieName.toLowerCase()) {
+      return 1;
+    }
+    return 0;
+}
+function sortByRating(a, b) {
+    return b.rating - a.rating;
+}
+function sortByDate(a, b) {
+    return new Date(b.date) - new Date(a.date);
+}
+
+
+function sortBtnActions(sortFunc) {
+    getFromApi(cardsContainer, BASIC_API + "all")
+        .then(res => res.data.sort(sortFunc))
+        .then(res => addMovieCard(res))
+
+}
+
+
+sortSelect.onchange = () => {
+    switch (sortSelect.value) {
+        case "ByName":
+            sortBtnActions(sortByName);
+            break;
+        case "ByRating":
+            sortBtnActions(sortByRating);
+            break;
+        case "ByDate":
+            sortBtnActions(sortByDate);
+            break;
+        default:
+            break;
     }
 }
-
 
 
 function addMovieCard(array) {
     let infoBtns = document.getElementsByClassName("infoBtns")
     let DeleteBtns = document.getElementsByClassName("DeleteBtns")
+    let options = {
+        method: "DELETE"
+    };
     if (array.length > 0) {
         cardsContainer.innerHTML = "";
         for (let movie of array) {
-                cardsContainer.innerHTML +=
-                    `<article class="movieCard">
+            cardsContainer.innerHTML +=
+                `<article class="movieCard">
                     <div class="cardImgBox">
                     <img src=${movie.image}>
                     </div>
@@ -54,17 +78,15 @@ function addMovieCard(array) {
         }
         for (let i = 0; i < infoBtns.length; i++) {
             infoBtns[i].onclick = () => { moreInfo(array[i]) }
-            let options = {
-                method: "DELETE"
-            }
             DeleteBtns[i].onclick = () => {
-                getMovieById(array[i]._id, options);
+                restApiById(BY_ID_ENDPOINT + array[i]._id, options);
                 alert(`${array[i].movieName} has been deleted`);
                 location.reload();
             }
         }
     } else {
-        alert(`${searchInput.value} is not here, sorry`)
+        alert(`No movies found`);
+        location.reload();
     }
 }
 
@@ -72,7 +94,6 @@ function addMovieCard(array) {
 
 function moreInfo(movie) {
     movieImgId.src = `${movie.image}`;
-    movieInfo.innerHTML = "";
     movieInfo.innerHTML =
         `<h1>${movie.movieName}</h1>
                 <h2>Id: ${movie._id}</h2>

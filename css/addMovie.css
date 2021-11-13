@@ -18,7 +18,7 @@
 }
 #bigContainer{
     display: grid;
-    grid-template-rows: 30vh 65vh 5vh;
+    grid-template-rows: 30vh 63vh 7vh;
 }
 #headerContainer{
     width: 100%;
@@ -131,23 +131,36 @@ span{
 
 
 
-#contactFooter{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.7);
-    font-size: 3vh;
-    color: white;
-    width: 100%;
+#footerBox{
     height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    display: flex;
     font-family: var(--mainFont);
 }
-#contactFooter a{
-    margin: 0 5vw;
-    text-decoration: none;
-    color: var(--lightBlue);
-    transition: 0.2s;
+#contactFooter, #myProjects{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 3.5vh;
 }
-#contactFooter a:hover{
-    color:white;
+#contactFooter{
+    border-right: 1px solid black;
+}
+#myProjects{
+    border-left: 1px solid black;
+}
+#contactFooter a, #myProjects a{
+    text-decoration: none;
+    color: black;
+    transition: 0.2s;
+    height: 100%;
+}
+#contactFooter a{
+    height: 50%;
+}
+#myProjects img{
+    height: 100%;
 }
