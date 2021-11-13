@@ -9,7 +9,6 @@ searchBtn.onclick = () => {
 }
 
 
-
 function sortByName(a, b) {
     if (a.movieName.toLowerCase() < b.movieName.toLowerCase()) {
       return -1;
@@ -55,9 +54,7 @@ sortSelect.onchange = () => {
 function addMovieCard(array) {
     let infoBtns = document.getElementsByClassName("infoBtns")
     let DeleteBtns = document.getElementsByClassName("DeleteBtns")
-    let options = {
-        method: "DELETE"
-    };
+    let options = { method: "DELETE" };
     if (array.length > 0) {
         cardsContainer.innerHTML = "";
         for (let movie of array) {
@@ -89,7 +86,6 @@ function addMovieCard(array) {
         location.reload();
     }
 }
-
 
 
 function moreInfo(movie) {
