@@ -130,6 +130,10 @@ span{
     transition: 0.1s;
     font-family: var(--mainFont);
 }
+.bothForms input:focus{
+    background: var(--darkBlue);
+    color: white;
+}
 .bothForms label{
     font-family: var(--mainFont);
     font-size: 18px;
