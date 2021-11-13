@@ -33,26 +33,49 @@
                         <li><a href="../index.html" class="leftNavLinks">Home</a></li>
                         <li><a href="moviesCards.html" class="leftNavLinks">Movies Cards</a></li>
                         <li><a href="moviesTable.html">Movies Table</a></li>
-                        <li><a href="addMovie.html" id="activePage">Add Movie</a></li>
+                        <li><a href="editMovies.html" id="activePage">Edit Movies</a></li>
                     </ul>
                 </nav>
             </section>
         </header>
         <main>
             <section id="formContainer">
-                <form id="postMovieForm">
-                    <label>Movie Name:</label>
-                    <input type="text" id="movieName">
-                    <label>Movie Image:</label>
-                    <input type="text" id="image">
-                    <label>Movie Link:</label>
-                    <input type="text" id="linkToMovie">
-                    <label>Movie Synopsis:</label>
-                    <input type="text" id="synopsis">
-                    <label>Movie Rating:</label>
-                    <input min="1" max="10" type="number" id="rating">
-                    <button>SEND</button>
-                </form>
+                <article class="formBoxes">
+                    <h2>Add New Movie</h2>
+                    <form id="postMovieForm" class="bothForms">
+                        <label>Movie Name:</label>
+                        <input type="text" id="postMovieName">
+                        <label>Movie Image:</label>
+                        <input type="text" id="postImage">
+                        <label>Movie Link:</label>
+                        <input type="text" id="postLinkToMovie">
+                        <label>Movie Synopsis:</label>
+                        <input type="text" id="postSynopsis">
+                        <label>Movie Rating:</label>
+                        <input min="1" max="10" type="number" id="postRating">
+                        <button>SEND</button>
+                    </form>
+                </article>
+
+                <article class="formBoxes">
+                    <h2>update Movie</h2>
+                    <form id="updateMovieForm" class="bothForms">
+                        <label>Movie Id:</label>
+                        <input type="text" id="putMovieId">
+                        <label>Movie Name:</label>
+                        <input type="text" id="putMovieName">
+                        <label>Movie Image:</label>
+                        <input type="text" id="putImage">
+                        <label>Movie Link:</label>
+                        <input type="text" id="putLinkToMovie">
+                        <label>Movie Synopsis:</label>
+                        <input type="text" id="putSynopsis">
+                        <label>Movie Rating:</label>
+                        <input min="1" max="10" type="number" id="putRating">
+                        <button>SEND</button>
+                    </form>
+                </article>
+
             </section>
         </main>
         <footer>
@@ -74,6 +97,7 @@
             </section>
         </footer>
     </section>
+
     <script src="../js/consts_functions.js"></script>
     <script src="../js/addMovie.js" type="text/javascript"></script>
 </body>
