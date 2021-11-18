@@ -18,18 +18,13 @@ function sortByName(a, b) {
     }
     return 0;
 }
-function sortByRating(a, b) {
-    return b.rating - a.rating;
-}
-function sortByDate(a, b) {
-    return new Date(b.date) - new Date(a.date);
-}
+function sortByRating(a, b) { return b.rating - a.rating; }
+function sortByDate(a, b) { return new Date(b.date) - new Date(a.date); }
 
 function sortBtnActions(sortFunc) {
     getFromApi(cardsContainer, BASIC_API + "all")
         .then(res => res.data.sort(sortFunc))
         .then(res => addMovieCard(res))
-
 }
 
 
@@ -76,19 +71,18 @@ function addMovieCard(array) {
 }
 
 
-
 function deleteMovie(id) {
     let options = { method: "DELETE" };
     restApiById(BY_ID_ENDPOINT + id, options)
         .then(res => alert(`${res.data.movieName} has been deleted`))
 }
 
+
 function getMovieIdToDisplay(id) {
     fetch(`https://moviesmern.herokuapp.com/movies/movie/${id}`)
         .then(res => res.json())
         .then(res => moreInfo(res.data))
 }
-
 function moreInfo(movie) {
     movieImgId.src = `${movie.image}`;
     movieInfo.innerHTML =
