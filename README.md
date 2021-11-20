@@ -9,6 +9,8 @@
 ### ✔️ Sort and search options included.
 ### ✔️ Adding new movies & editing existing movies.
 
+# 📸
+
 <img src="./media/Git_Img/homePage_GitImg.png" width="100%">
 <img src="./media/Git_Img/cardsPage_GitImg.png" width="100%">
 <img src="./media/Git_Img/singleMovie_GitImg.png" width="100%">
