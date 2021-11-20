@@ -1,4 +1,4 @@
-# :film_projector: Marcos-Movies :film_projector:
+# 📽️ Marcos Movies 📽️
 
 ### An application for displaying and managing movies using a real API.
 
