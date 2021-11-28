@@ -8,7 +8,7 @@
     <title>Marcos Movies - Table</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
@@ -17,39 +17,38 @@
 </head>
 
 <body>
-    <video src="../media/bgVideo.mp4" autoplay loop muted id="bgVideo"></video>
-    <section id="bigContainer">
+    <section class="big-container">
         <header>
-            <section id="headerContainer">
-                <article id="logosHeader">
-                    <img src="../media/indi_logo.png" alt="indi.com logo" id="indiLogo">
-                    <h1><span>M</span>arcos <span>M</span>ovies</h1>
+            <section class="header-container">
+                <article class="logos-header">
+                    <img src="../media/indi_logo.png" alt="indi.com logo" class="indi-logo">
+                    <h1 class="main-title">Marcos Movies</h1>
                     <a href="https://www.tech-career.org" target="blank">
-                        <img src="../media/tech_logo.png" alt="tech career logo" id="techLogo">
+                        <img src="../media/tech_logo.png" alt="tech career logo" class="tech-logo">
                     </a>
                 </article>
-                <nav id="navbar">
-                    <ul>
-                        <li><a href="../index.html" class="leftNavLinks">Home</a></li>
-                        <li><a href="moviesCards.html" class="leftNavLinks">Movies Cards</a></li>
-                        <li><a href="moviesTable.html" id="activePage">Movies Table</a></li>
-                        <li><a href="editMovies.html">Add / Edit</a></li>
+                <nav class="navbar">
+                    <ul class="navbar-ul">
+                        <li><a class="navbar-links" href="../index.html">Home</a></li>
+                        <li><a class="navbar-links" href="moviesCards.html">Movies Cards</a></li>
+                        <li><a class="navbar-links active-page" href="moviesTable.html">Movies Table</a></li>
+                        <li><a class="navbar-links" href="editMovies.html">Add / Edit</a></li>
                     </ul>
                 </nav>
             </section>
         </header>
         <main>
             <section id="tableBox">
-                <table id="moviesTable">
+                <table class="movies-table">
                     <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>Movie Name</th>
-                            <th>Image</th>
-                            <th>Synopsis</th>
-                            <th>Link</th>
-                            <th>Rating</th>
-                            <th>Created Date</th>
+                            <th class="table-th">Id</th>
+                            <th class="table-th">Movie Name</th>
+                            <th class="table-th">Image</th>
+                            <th class="table-th">Synopsis</th>
+                            <th class="table-th">Link</th>
+                            <th class="table-th">Rating</th>
+                            <th class="table-th">Created Date</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody"></tbody>
@@ -57,26 +56,27 @@
             </section>
         </main>
         <footer>
-            <section id="footerBox">
-                <article id="contactFooter">
-                    <a href="https://www.linkedin.com/in/marcos-bazbih-202757202/" target="blank"><i
-                            class="fab fa-linkedin"></i></a>
-                    <p>Contact Me Here</p>
-                    <a href="https://github.com/Marcos-Bazbih" target="blank"><i
+            <section class="footer-box">
+                <article class="contact-footer">
+                    <a class="contact-links" href="https://www.linkedin.com/in/marcos-bazbih-202757202/"
+                        target="blank"><i class="fab fa-linkedin"></i></a>
+                    <p class="footer-header">Contact Me Here</p>
+                    <a class="contact-links" href="https://github.com/Marcos-Bazbih" target="blank"><i
                             class="fab fa-github contactIcons"></i></a>
                 </article>
-                <article id="myProjects">
-                    <a href="https://marcos-bazbih.github.io/Kendrick-Lamar/" target="blank"><img
-                            src="../media/kendrickLogo.png" alt=""></a>
-                    <p>My Previous Projects</p>
-                    <a href="https://marcos-bazbih.github.io/Music-Records-ecommerce-app/" target="blank"><img
-                            src="../media/HipHopHouseIcon.png" alt=""></a>
+                <article class="projects-footer">
+                    <a class="projects-links" href="https://marcos-bazbih.github.io/Kendrick-Lamar/" target="blank">
+                        <img class="projects-img" src="../media/kendrickLogo.png" alt=""></a>
+                    <p class="footer-header">My Previous Projects</p>
+                    <a class="projects-links" href="https://marcos-bazbih.github.io/Hip-Hop-House-eCommerce-app/"
+                        target="blank">
+                        <img class="projects-img" src="../media/HipHopHouseIcon.png" alt=""></a>
                 </article>
             </section>
         </footer>
     </section>
     
-    <script src="../js/consts_functions.js" type="text/javascript"></script>
+    <script src="../js/apiFunctions.js" type="text/javascript"></script>
     <script src="../js/moviesTable.js" type="text/javascript"></script>
 </body>
 
