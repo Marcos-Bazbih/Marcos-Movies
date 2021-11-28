@@ -1,36 +1,43 @@
 :root{
     --mainFont: 'Berkshire Swash', cursive;
-    --headersFont: 'Macondo', cursive;
-    --darkBlue: #00224f;
-    --lightBlue: #51d7ea;
+    --headersFont: 'Luckiest Guy', cursive;;
+    --darkBrown: #3f1910;
+    --lightBrown: #ffedab;
 }
 *{
     margin: 0;
     padding: 0;
 }
-#bgVideo{
-    z-index: -100;
-    width: 100vw;
-    height: 135vh;
-    object-fit:cover;
-    position: fixed;
-    top: 0;
+body{
+    background: var(--lightBrown);
 }
-#bigContainer{
+.big-container{
     display: grid;
     grid-template-rows: 30vh 63vh 7vh;
+    position: relative;
+    overflow: hidden;
 }
-#headerContainer{
+.bg-img{
+    position: absolute;
+    top: -2.5%;
+    left: -10%;
+    width: 60.5vw;
+    height: 130vh;
+    z-index: -1000;
+}
+
+
+.header-container{
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
-#logosHeader, #navbar{
+.logos-header, .navbar{
     width: 100%;
     height: 50%;
 }
-#logosHeader{
+.logos-header{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,25 +45,26 @@
     font-weight: bold;  
     font-family: var(--headersFont);
 }
-span{
-    color:var(--lightBlue);
+.main-title{
+    color:var(--darkBrown);
+    border-bottom: 8px double black;
 }
-#indiLogo, #techLogo{
+.indi-logo, .tech-logo{
     position: fixed;
     width: 11vw;
     z-index: 100;
 }
-#indiLogo{
+.indi-logo{
     top: 0;
     height: 19vh;
     left: 0;
 }
-#techLogo{
+.tech-logo{
     top: 1vh;
     height: 16vh;
     right: 1vw;
 }
-#navbar ul{
+.navbar-ul{
     display: flex;
     align-items: center;
     width: 100%;
@@ -64,7 +72,7 @@ span{
     justify-content: space-evenly;
     list-style-type: none;
 }
-#navbar ul li a{
+.navbar-links{
     padding: 8px;
     border-top: 3.5px solid transparent;
     border-bottom: 3.5px solid transparent;
@@ -72,31 +80,27 @@ span{
     text-decoration: none;
     font-family: var(--mainFont);
     font-weight: bold;
-    color: var(--darkBlue);
+    color: var(--darkBrown);
     font-size: 30px;
     transition: 0.2s;
 }
-#navbar ul li .leftNavLinks{
-    border-radius: 25% 0%;
-    color: white;
-}
-#navbar ul li a:hover, #navbar ul li #activePage{
-    border-color: var(--lightBlue);
+.navbar-links:hover, .active-page{
+    border-color: var(--darkBrown);
 }
 
 
-
-#SliderBox{
+.slider-box{
     position: relative;
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
-#sliderImg{
+#slider-img{
     position: absolute;
     right: -25%;
     top: 1vw;
     border-radius: 15%;
+    border: 8px double var(--darkBrown);
     width: 25%;
     height: 80%;
     animation: slider 25s infinite;
@@ -115,37 +119,31 @@ span{
     100%{transform: translate(0%);}
 }
 
-
-#footerBox{
+.footer-box{
     height: 100%;
     width: 100%;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.2);
     display: flex;
     font-family: var(--mainFont);
 }
-#contactFooter, #myProjects{
+.contact-footer, .projects-footer{
     height: 100%;
     width: 50%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     font-size: 3.5vh;
+    font-weight: bold;
 }
-#contactFooter{
-    border-right: 1px solid black;
-}
-#myProjects{
-    border-left: 1px solid black;
-}
-#contactFooter a, #myProjects a{
+.contact-links, .projects-links{
     text-decoration: none;
     color: black;
     transition: 0.2s;
     height: 100%;
 }
-#contactFooter a{
+.contact-links{
     height: 50%;
 }
-#myProjects img{
+.projects-img{
     height: 100%;
 }
