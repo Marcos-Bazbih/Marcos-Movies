@@ -1,5 +1,3 @@
-slowDownBgVideo();
-
 class Movie {
     movieName;
     image;

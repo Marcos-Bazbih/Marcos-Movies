@@ -1,62 +1,59 @@
 :root{
     --mainFont: 'Berkshire Swash', cursive;
-    --headersFont: 'Macondo', cursive;
-    --darkBlue: #00224f;
-    --lightBlue: #51d7ea;
+    --headersFont: 'Luckiest Guy', cursive;;
+    --darkBrown: #3f1910;
+    --lightBrown: #ffedab;
 }
 *{
     margin: 0;
     padding: 0;
 }
-#bgVideo{
-    z-index: -100;
-    width: 100vw;
-    height: 135vh;
-    object-fit:cover;
-    position: fixed;
-    top: 0;
+body{
+    background: var(--lightBrown);
 }
-#bigContainer{
+.big-container{
     display: grid;
     grid-template-rows: 30vh 63vh 7vh;
 }
-#headerContainer{
+.header-container{
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
-#logosHeader, #navbar{
+.logos-header, .navbar{
     width: 100%;
     height: 50%;
 }
-#logosHeader{
-    z-index: 1000;
+.logos-header{
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 70px;  
     font-weight: bold;  
     font-family: var(--headersFont);
+    z-index: 1000;
 }
-span{
-    color:var(--lightBlue);
+.main-title{
+    color:var(--darkBrown);
+    border-bottom: 8px double black;
 }
-#indiLogo, #techLogo{
-    position: absolute;
+.indi-logo, .tech-logo{
+    position: fixed;
     width: 11vw;
+    z-index: 100;
 }
-#indiLogo{
+.indi-logo{
     top: 0;
     height: 19vh;
     left: 0;
 }
-#techLogo{
+.tech-logo{
     top: 1vh;
     height: 16vh;
     right: 1vw;
 }
-#navbar ul{
+.navbar-ul{
     display: flex;
     align-items: center;
     width: 100%;
@@ -64,7 +61,7 @@ span{
     justify-content: space-evenly;
     list-style-type: none;
 }
-#navbar ul li a{
+.navbar-links{
     padding: 8px;
     border-top: 3.5px solid transparent;
     border-bottom: 3.5px solid transparent;
@@ -72,21 +69,17 @@ span{
     text-decoration: none;
     font-family: var(--mainFont);
     font-weight: bold;
-    color: var(--darkBlue);
+    color: var(--darkBrown);
     font-size: 30px;
     transition: 0.2s;
 }
-#navbar ul li .leftNavLinks{
-    border-radius: 25% 0%;
-    color: white;
-}
-#navbar ul li a:hover, #navbar ul li #activePage{
-    border-color: var(--lightBlue);
+.navbar-links:hover, .active-page{
+    border-color: var(--darkBrown);
 }
 
 
 
-#formContainer{
+.form-container{
     width: 100%;
     height: 100%;
     display: flex;
@@ -94,7 +87,7 @@ span{
     align-items: center;
 }
 
-.formBoxes{
+.form-boxes{
     width: 50%;
     height: 100%;
     display: flex;
@@ -102,90 +95,84 @@ span{
     align-items: center;
     justify-content: space-evenly;
 }
-.formBoxes h2{
+.form-header2{
     padding: 0 20px;
     font-family: var(--headersFont);
-    border-left: 3px solid var(--darkBlue);
-    border-right: 3px solid var(--darkBlue);
+    border-left: 3px solid var(--darkBrown);
+    border-right: 3px solid var(--darkBrown);
     font-size: 40px;
-    color: var(--darkBlue);
+    color: var(--darkBrown);
 }
-.formBoxes:first-child h2{
-    border-color: white;
-    color: white;
-}
-.bothForms{
-    background: rgba(0, 0, 0, 0.7);
-    width: 70%;
+
+.both-forms{
+    background: white;
+    width: 65%;
     height: 80%;
     border-radius: 15%;
+    border: 5px double var(--darkBrown);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    color: white;
+    color: var(--darkBrown);
+    font-weight: bold;
 }
-.bothForms input{
+.form-input{
     width: 35%;
     font-size: 15px;
     transition: 0.1s;
     font-family: var(--mainFont);
+    color: var(--darkBrown);
 }
-.bothForms input:focus{
-    background: var(--darkBlue);
+.form-input:focus{
+    background: var(--darkBrown);
     color: white;
 }
-.bothForms label{
+.form-label{
     font-family: var(--mainFont);
     font-size: 18px;
 }
-.bothForms button{
+.form-btn{
+    color: var(--darkBrown);
     padding: 2px 10px ;
     cursor: pointer;
     font-family: var(--headersFont);
     font-size: 20px;
-    color: var(--darkBlue);
-    font-weight: bold;
     transition: 0.1s;
 }
-.bothForms button:hover{
+.form-btn:hover{
     color: white;
-    border-color: var(--darkBlue);
-    background:var(--darkBlue);
+    border-color: var(--darkBrown);
+    background:var(--darkBrown);
 }
 
 
 
-#footerBox{
+.footer-box{
     height: 100%;
     width: 100%;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.3);
     display: flex;
     font-family: var(--mainFont);
 }
-#contactFooter, #myProjects{
+.contact-footer, .projects-footer{
     height: 100%;
     width: 50%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     font-size: 3.5vh;
+    font-weight: bold;
 }
-#contactFooter{
-    border-right: 1px solid black;
-}
-#myProjects{
-    border-left: 1px solid black;
-}
-#contactFooter a, #myProjects a{
+.contact-links, .projects-links{
     text-decoration: none;
     color: black;
     transition: 0.2s;
     height: 100%;
 }
-#contactFooter a{
+.contact-links{
     height: 50%;
 }
-#myProjects img{
+.projects-img{
     height: 100%;
 }

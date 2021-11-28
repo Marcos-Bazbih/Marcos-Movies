@@ -8,7 +8,7 @@
     <title>Marcos Movies - Add / Edit</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
@@ -17,88 +17,88 @@
 </head>
 
 <body>
-    <video src="../media/bgVideo.mp4" autoplay loop muted id="bgVideo"></video>
-    <section id="bigContainer">
+    <section class="big-container">
         <header>
-            <section id="headerContainer">
-                <article id="logosHeader">
-                    <img src="../media/indi_logo.png" alt="indi.com logo" id="indiLogo">
-                    <h1><span>M</span>arcos <span>M</span>ovies</h1>
+            <section class="header-container">
+                <article class="logos-header">
+                    <img src="../media/indi_logo.png" alt="indi.com logo" class="indi-logo">
+                    <h1 class="main-title">Marcos Movies</h1>
                     <a href="https://www.tech-career.org" target="blank">
-                        <img src="../media/tech_logo.png" alt="tech career logo" id="techLogo">
+                        <img src="../media/tech_logo.png" alt="tech career logo" class="tech-logo">
                     </a>
                 </article>
-                <nav id="navbar">
-                    <ul>
-                        <li><a href="../index.html" class="leftNavLinks">Home</a></li>
-                        <li><a href="moviesCards.html" class="leftNavLinks">Movies Cards</a></li>
-                        <li><a href="moviesTable.html">Movies Table</a></li>
-                        <li><a href="editMovies.html" id="activePage">Add / Edit</a></li>
+                <nav class="navbar">
+                    <ul class="navbar-ul">
+                        <li><a class="navbar-links" href="../index.html">Home</a></li>
+                        <li><a class="navbar-links" href="moviesCards.html">Movies Cards</a></li>
+                        <li><a class="navbar-links" href="moviesTable.html">Movies Table</a></li>
+                        <li><a class="navbar-links active-page" href="editMovies.html">Add / Edit</a></li>
                     </ul>
                 </nav>
             </section>
         </header>
         <main>
-            <section id="formContainer">
-                <article class="formBoxes">
-                    <h2>Add New Movie</h2>
-                    <form id="postMovieForm" class="bothForms">
-                        <label>Movie Name:</label>
-                        <input type="text" id="postMovieName">
-                        <label>Movie Image:</label>
-                        <input type="text" id="postImage">
-                        <label>Movie Link:</label>
-                        <input type="text" id="postLinkToMovie">
-                        <label>Movie Synopsis:</label>
-                        <input type="text" id="postSynopsis">
-                        <label>Movie Rating:</label>
-                        <input min="1" max="10" type="number" id="postRating">
-                        <button>SEND</button>
+            <section class="form-container">
+                <article class="form-boxes">
+                    <h2 class="form-header2">Add New Movie</h2>
+                    <form id="postMovieForm" class="both-forms">
+                        <label class="form-label">Movie Name:</label>
+                        <input class="form-input" type="text" id="postMovieName">
+                        <label class="form-label">Movie Image:</label>
+                        <input class="form-input" type="text" id="postImage">
+                        <label class="form-label">Movie Link:</label>
+                        <input class="form-input" type="text" id="postLinkToMovie">
+                        <label class="form-label">Movie Synopsis:</label>
+                        <input class="form-input" type="text" id="postSynopsis">
+                        <label class="form-label">Movie Rating:</label>
+                        <input class="form-input" min="1" max="10" type="number" id="postRating">
+                        <button class="form-btn">SEND</button>
                     </form>
                 </article>
 
-                <article class="formBoxes">
-                    <h2>Edit Movie</h2>
-                    <form id="editMovieForm" class="bothForms">
-                        <label>Movie Id:</label>
-                        <input type="text" id="putMovieId">
-                        <label>Movie Name:</label>
-                        <input type="text" id="putMovieName">
-                        <label>Movie Image:</label>
-                        <input type="text" id="putImage">
-                        <label>Movie Link:</label>
-                        <input type="text" id="putLinkToMovie">
-                        <label>Movie Synopsis:</label>
-                        <input type="text" id="putSynopsis">
-                        <label>Movie Rating:</label>
-                        <input min="1" max="10" type="number" id="putRating">
-                        <button>SEND</button>
+                <article class="form-boxes">
+                    <h2 class="form-header2">Edit Movie</h2>
+                    <form id="editMovieForm" class="both-forms">
+                        <label class="form-label">Movie Id:</label>
+                        <input class="form-input" type="text" id="putMovieId">
+                        <label class="form-label">Movie Name:</label>
+                        <input class="form-input" type="text" id="putMovieName">
+                        <label class="form-label">Movie Image:</label>
+                        <input class="form-input" type="text" id="putImage">
+                        <label class="form-label">Movie Link:</label>
+                        <input class="form-input" type="text" id="putLinkToMovie">
+                        <label class="form-label">Movie Synopsis:</label>
+                        <input class="form-input" type="text" id="putSynopsis">
+                        <label class="form-label">Movie Rating:</label>
+                        <input class="form-input" min="1" max="10" type="number" id="putRating">
+                        <button class="form-btn">SEND</button>
                     </form>
                 </article>
 
             </section>
         </main>
         <footer>
-            <section id="footerBox">
-                <article id="contactFooter">
-                    <a href="https://www.linkedin.com/in/marcos-bazbih-202757202/" target="blank"><i
-                            class="fab fa-linkedin"></i></a>
-                    <p>Contact Me Here</p>
-                    <a href="https://github.com/Marcos-Bazbih" target="blank"><i
+            <section class="footer-box">
+                <article class="contact-footer">
+                    <a class="contact-links" href="https://www.linkedin.com/in/marcos-bazbih-202757202/"
+                        target="blank"><i class="fab fa-linkedin"></i></a>
+                    <p class="footer-header">Contact Me Here</p>
+                    <a class="contact-links" href="https://github.com/Marcos-Bazbih" target="blank"><i
                             class="fab fa-github contactIcons"></i></a>
                 </article>
-                <article id="myProjects">
-                    <a href="https://marcos-bazbih.github.io/Kendrick-Lamar/" target="blank"><img
-                            src="../media/kendrickLogo.png" alt=""></a>
-                    <p>My Previous Projects</p>
-                    <a href="https://marcos-bazbih.github.io/Music-Records-ecommerce-app/" target="blank"><img
-                            src="../media/HipHopHouseIcon.png" alt=""></a>
+                <article class="projects-footer">
+                    <a class="projects-links" href="https://marcos-bazbih.github.io/Kendrick-Lamar/" target="blank">
+                        <img class="projects-img" src="../media/kendrickLogo.png" alt=""></a>
+                    <p class="footer-header">My Previous Projects</p>
+                    <a class="projects-links" href="https://marcos-bazbih.github.io/Hip-Hop-House-eCommerce-app/"
+                        target="blank">
+                        <img class="projects-img" src="../media/HipHopHouseIcon.png" alt=""></a>
                 </article>
             </section>
         </footer>
     </section>
 
-    <script src="../js/consts_functions.js"></script>
+    <script src="../js/apiFunctions.js" type="text/javascript"></script>
     <script src="../js/editMovies.js" type="text/javascript"></script>
 </body>
 
