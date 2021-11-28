@@ -1,65 +1,62 @@
 :root{
     --mainFont: 'Berkshire Swash', cursive;
-    --headersFont: 'Macondo', cursive;
-    --darkBlue: #00224f;
-    --lightBlue: #51d7ea;
+    --headersFont: 'Luckiest Guy', cursive;;
+    --darkBrown: #3f1910;
+    --lightBrown: #ffedab;
 }
 *{
     margin: 0;
     padding: 0;
 }
 body{
+    background: var(--lightBrown);
     overflow-x: hidden;
 }
-#bgVideo{
-    z-index: -100;
-    width: 100vw;
-    height: 135vh;
-    object-fit:cover;
-    position: fixed;
-    top: 0;
-}
-#bigContainer{
+.big-container{
     display: grid;
     grid-template-rows: 30vh auto 7vh;
 }
-#headerContainer{
+
+
+.header-container{
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
-#logosHeader, #navbar{
+.logos-header, .navbar{
     width: 100%;
     height: 50%;
 }
-#logosHeader{
-    z-index: 1000;
+.logos-header{
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 70px;  
     font-weight: bold;  
     font-family: var(--headersFont);
+    z-index: 1000;
 }
-span{
-    color:var(--lightBlue);
+.main-title{
+    color:var(--darkBrown);
+    border-bottom: 8px double black;
 }
-#indiLogo, #techLogo{
+.indi-logo, .tech-logo{
     position: fixed;
     width: 11vw;
+    z-index: 100;
 }
-#indiLogo{
+.indi-logo{
     top: 0;
     height: 19vh;
     left: 0;
 }
-#techLogo{
+.tech-logo{
     top: 1vh;
     height: 16vh;
     right: 1vw;
 }
-#navbar ul{
+.navbar-ul{
     display: flex;
     align-items: center;
     width: 100%;
@@ -67,7 +64,7 @@ span{
     justify-content: space-evenly;
     list-style-type: none;
 }
-#navbar ul li a{
+.navbar-links{
     padding: 8px;
     border-top: 3.5px solid transparent;
     border-bottom: 3.5px solid transparent;
@@ -75,16 +72,12 @@ span{
     text-decoration: none;
     font-family: var(--mainFont);
     font-weight: bold;
-    color: var(--darkBlue);
+    color: var(--darkBrown);
     font-size: 30px;
     transition: 0.2s;
 }
-#navbar ul li .leftNavLinks{
-    border-radius: 25% 0%;
-    color: white;
-}
-#navbar ul li a:hover, #navbar ul li #activePage{
-    border-color: var(--lightBlue);
+.navbar-links:hover, .active-page{
+    border-color: var(--darkBrown);
 }
 
 
@@ -97,51 +90,48 @@ span{
     flex-direction: column;
     width: 100%;
     height: 100%;
+    background: var(--lightBrown);
 }
 #leaveBtn{
     z-index: 1000;
     position: absolute;
-    top: 15%;
+    top: 17.5%;
     right: 47.5%;
     width: 5%;
     height: 10%;
     cursor: pointer;
-    background: var(--darkBlue);
-    color: white;
+    background: var(--darkBrown);
+    color: var(--lightBrown);
     text-align: center;
     font-size: 20px;
     font-weight: bold;
-    border: 7px double white;
+    border: 7px double var(--lightBrown);
     border-radius: 50%;
     transition: 0.1s;
 }
 #leaveBtn:hover{
-    background: white;
-    color: var(--darkBlue);
-    border-color: var(--darkBlue);
+    background: var(--lightBrown);
+    color: var(--darkBrown);
+    border-color: var(--darkBrown);
 }
-
-
-
 #movieBox{
     width: 100%;
     height: 100%;
     display: flex;
 }
-#movieImg{
+#movieImgBox{
     width: 50%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#movieImgId{
+#movieImg{
     width: 60%;
     height: 60%;
     border-radius: 10%;
+    border: 8px double var(--darkBrown);
 }
-
-
 #movieInfo{
     align-self: flex-end;
     width: 50%;
@@ -150,43 +140,57 @@ span{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    color: var(--darkBrown);
 }
-#movieInfo h1{
+.movie-info-header1{
     font-size: 40px; 
     font-family: var(--headersFont);
 }
-#movieInfo h2{
+.movie-info-header2{
     font-size: 25px; 
     font-family: var(--mainFont);
 }
-#synopsis{
+.synopsis{
     max-height: 40%;
     overflow: auto;
 }
+.movie-info-link{
+    text-decoration: none;
+    padding: 5px;
+    border: 5px solid var(--darkBrown) ;
+    color: var(--darkBrown);
+    background: var(--lightBrown);
+    transition: 0.2s;
+}
+.movie-info-link:hover{
+    color: var(--lightBrown);
+    background: var(--darkBrown);
+}
 
 
-#sortAndSearchBox{
+
+
+.sort-search-container{
     display: flex;
     height: 20vh;
     width: 100%;
 }
-
-#sortBox{
+.sort-box{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50%;
     height: 100%;
 }
-#sortBox h2{
+.sort-title{
     font-family: var(--headersFont);
     margin-right: 3vw;
-    color: white;
+    color: var(--darkBrown);
     font-size: 50px;
 }
 #sortSelect{
-    background: var(--darkBlue);
-    color: var(--lightBlue);
+    background: var(--darkBrown);
+    color: var(--lightBrown);
     font-family: var(--mainFont);
     padding: 5px;
     font-size: 25px;
@@ -197,43 +201,45 @@ span{
     cursor: pointer;
 }
 
-#searchBox{
+
+.search-box{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50%;
     height: 100%;
 }
-#searchBox input{
+#searchInput{
     height: 30%;
     width: 60%;
     margin-right: 3%;
     border: 2px solid black;
-    background: rgba(0, 0, 0, 0.7);
+    background: var(--darkBrown);
     color: white;
     font-size: 20px;
     transition: 0.1s;
 }
-#searchBox input:focus{
-    background: rgba(255, 255, 255, 0.7);
-    color: black;
+#searchInput:focus{
+    background: var(--lightBrown);
+    color: var(--darkBrown);
 }
-#searchBox button{
+#searchBtn{
     cursor: pointer;
     height: 30%;
     padding: 5px 10px;
     border: 2px solid black;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.7);
-    color: var(--lightBlue);
+    background: var(--lightBrown);
+    color: var(--darkBrown);
     font-size: 20px;
     transition: 0.1s;
 }
-#searchBox button:hover{
-    background: var(--lightBlue);
-    color: var(--darkBlue);
-
+#searchBtn:hover{
+    background: var(--darkBrown);
+    color: var(--lightBrown);
 }
+
+
 
 #cardsContainer{
     width: 100%;
@@ -243,65 +249,65 @@ span{
 }
 
 
-.movieCard{
+.movie-card{
     display: flex;
     flex-direction: column;
     width: 28%;
     height: 70vh;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     border-radius: 15%;
     margin-bottom: 5vh;
     font-family: var(--headersFont);
     transition: 0.2s;
 }
-.movieCard:hover{
-    background: rgba(255, 255, 255, 0.6);
+.movie-card:hover{
+    background: rgba(0, 0, 0, 0.3);
 }
-.movieCard:hover> .cardInfoBox{
+.movie-card:hover> .card-info-box{
     color: black;
 }
 
-.cardImgBox{
+.card-img-box{
     width: 100%;
     height: 60%;
     display: flex;
     justify-content: center;
 }
-.cardImgBox img{
+.card-img{
     width: 100%;
     height: 100%;
     border-radius: 5% ;
 }
-    
 
-.cardInfoBox{
+
+.card-info-box{
     width: 100%;
     height: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    color: white;
+    color: var(--lightBrown);
     text-align: center;
 }
-.cardInfoBox h1{
+.card-header-1{
     font-size: 40px;
 }
-.cardInfoBox h2{
+.card-header-2{
     font-size: 20px;
 }
 
 
-.btnsBox{
+.buttons-box{
     width: 100%;
     height: 10%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
-.btnsBox button{
+.card-buttons{
     background: white;
-    color: var(--darkBlue);
+    color: var(--darkBrown);
     padding: 5px 10px;
     width: 30%;
     height: fit-content;
@@ -313,52 +319,47 @@ span{
     border: 3px solid black;
     border-radius:  0 50%;
 }
-.btnsBox button:hover{
-    background: var(--darkBlue);
+.card-buttons:hover{
+    background: var(--darkBrown);
     color: white;
     border-color: white;
 }
-.btnsBox button:last-of-type{
-    background: var(--darkBlue);
+.card-buttons:last-of-type{
+    background: var(--darkBrown);
     color: white;
     border-radius: 50% 0;
 }
-.btnsBox button:last-of-type:hover{
+.card-buttons:last-of-type:hover{
     background: white;
-    color: var(--darkBlue);
-    border-color: var(--darkBlue);
+    color: var(--darkBrown);
+    border-color: var(--darkBrown);
 }
 
-#footerBox{
+.footer-box{
     height: 100%;
     width: 100%;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.3);
     display: flex;
     font-family: var(--mainFont);
 }
-#contactFooter, #myProjects{
+.contact-footer, .projects-footer{
     height: 100%;
     width: 50%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     font-size: 3.5vh;
+    font-weight: bold;
 }
-#contactFooter{
-    border-right: 1px solid black;
-}
-#myProjects{
-    border-left: 1px solid black;
-}
-#contactFooter a, #myProjects a{
+.contact-links, .projects-links{
     text-decoration: none;
     color: black;
     transition: 0.2s;
     height: 100%;
 }
-#contactFooter a{
+.contact-links{
     height: 50%;
 }
-#myProjects img{
+.projects-img{
     height: 100%;
 }

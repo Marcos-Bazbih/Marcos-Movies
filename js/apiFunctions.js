@@ -3,17 +3,12 @@ const BY_ID_ENDPOINT = "movie/";
 const SEARCH_ENDPOINT = "movie/searchByName/";
 const SAVE_MOVIE_ENDPOINT = "saveMovie";
 
-
-function slowDownBgVideo(){
-    document.querySelector('video').playbackRate = 0.50;
-}
 function showLoader(element){
     element.innerHTML += `<img src="../media/loader_Gif.gif" alt="" id="loaderGif">`
 }
 function stopLoader(){
     loaderGif.style.display="none"
 }
-
 
 async function getFromApi(element, api_Url) {
     try {

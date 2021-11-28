@@ -1,4 +1,5 @@
-slowDownBgVideo();
+const bgImg = document.getElementById("bg-img");
+
 
 getFromApi(cardsContainer, BASIC_API + "all")
     .then(res => addMovieCard(res.data))
@@ -50,17 +51,17 @@ function addMovieCard(array) {
         cardsContainer.innerHTML = "";
         for (let movie of array) {
             cardsContainer.innerHTML +=
-                `<article class="movieCard">
-                    <div class="cardImgBox">
-                    <img src=${movie.image}>
+                `<article class="movie-card">
+                    <div class="card-img-box">
+                    <img class="card-img" src=${movie.image}>
                     </div>
-                    <div class="cardInfoBox">
-                    <h1>${movie.movieName}</h1>
-                    <h2>Rating: ${movie.rating}/10</h2>
+                    <div class="card-info-box">
+                    <h1 class="card-header-1">${movie.movieName}</h1>
+                    <h2 class="card-header-2">Rating: ${movie.rating}/10</h2>
                     </div>
-                    <div class="btnsBox">
-                    <button onclick="getMovieIdToDisplay('${movie._id}')">More Info</button>
-                    <button onclick="deleteMovie('${movie._id}')">Delete</button>
+                    <div class="buttons-box">
+                    <button class="card-buttons" onclick="getMovieIdToDisplay('${movie._id}')">More Info</button>
+                    <button class="card-buttons" onclick="deleteMovie('${movie._id}')">Delete</button>
                     </div>
                     </article>`
         }
@@ -84,21 +85,19 @@ function getMovieIdToDisplay(id) {
         .then(res => moreInfo(res.data))
 }
 function moreInfo(movie) {
-    movieImgId.src = `${movie.image}`;
+    movieImg.src = `${movie.image}`;
     movieInfo.innerHTML =
-        `<h1>${movie.movieName}</h1>
-         <h2>Id: ${movie._id}</h2>
-         <h2>Rating: ${movie.rating}/10</h2>
-         <h2>Date: ${movie.date}</h2>
-         <h2 id="synopsis">${movie.synopsis}</h2>
-         <h2><a href=${movie.linkToMovie} target="blank">more info</a></h2>
+        `<h1 class="movie-info-header1">${movie.movieName}</h1>
+         <h2 class="movie-info-header2">Id: ${movie._id}</h2>
+         <h2 class="movie-info-header2">Rating: ${movie.rating}/10</h2>
+         <h2 class="movie-info-header2">Date: ${movie.date}</h2>
+         <h2 class="movie-info-header2 synopsis">${movie.synopsis}</h2>
+         <h2 class="movie-info-header2"><a class="movie-info-link" href=${movie.linkToMovie} target="blank">more info</a></h2>
          `
     cardsContainer.style.display = "none";
     moviePage.style.left = "0";
-    bgVideo.style.zIndex = "999";
 }
 leaveBtn.onclick = () => {
     cardsContainer.style.display = "flex"
     moviePage.style.left = "100%"
-    bgVideo.style.zIndex = "-100"
 }
