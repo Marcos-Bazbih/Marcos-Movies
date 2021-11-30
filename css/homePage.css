@@ -37,13 +37,14 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 70px;  
     font-weight: bold;  
     font-family: var(--headersFont);
+    text-align: center;
 }
 .main-title{
     color:var(--darkBrown);
     border-bottom: 8px double black;
+    font-size: 70px;
 }
 .indi-logo, .tech-logo{
     position: fixed;
@@ -93,7 +94,7 @@ body{
 }
 #sliderImg{
     position: absolute;
-    right: -25%;
+    right: -30%;
     top: 1vw;
     border-radius: 15%;
     border: 8px double var(--darkBrown);
@@ -142,4 +143,137 @@ body{
 }
 .projects-img{
     height: 100%;
+}
+
+
+@media screen and (max-width:850px){
+    #bgImg{
+        width: 70vw;
+    }
+    .main-title{
+        font-size: 60px;
+    }
+    @keyframes slider {
+        0%{}
+        10%{transform: translate(-120%);}
+        20%{transform: translate(5%);}
+        30%{transform: translate(-120%);}
+        40%{transform: translate(5%);}
+        50%{transform: translate(-120%);}
+        60%{transform: translate(5%);}
+        70%{transform: translate(-120%);}
+        80%{transform: translate(5%);}
+        90%{transform: translate(-120%);}
+        100%{transform: translate(0%);}
+    }
+}
+@media screen and (max-width:800px){
+    #bgImg{
+        display: none;
+    }
+    .indi-logo, .tech-logo{
+        width: 14vw;
+    }
+    .navbar-ul{
+        position: absolute;
+        flex-direction: column;
+        width: 50vw;
+        height: 78vh;
+        z-index: 1;
+    }
+    #sliderImg{
+        right: -40%;
+        width: 35%;
+    }
+    @keyframes slider {
+        0%{}
+        10%{transform: translate(-150%);}
+        20%{transform: translate(5%);}
+        30%{transform: translate(-150%);}
+        40%{transform: translate(5%);}
+        50%{transform: translate(-150%);}
+        60%{transform: translate(5%);}
+        70%{transform: translate(-150%);}
+        80%{transform: translate(5%);}
+        90%{transform: translate(-150%);}
+        100%{transform: translate(0%);}
+    }
+}
+@media screen and (max-width:700px){
+    .main-title{
+        font-size: 50px;
+    }
+}
+@media screen and (max-width:580px){
+    .contact-footer, .projects-footer{
+        font-size: 3vh;
+    }
+    .projects-links{
+        height: 75%;
+    }
+    .indi-logo{
+        height: 16vh;
+    }
+    .tech-logo{ 
+        height: 13vh;
+    }
+    .main-title{
+        font-size: 45px;
+    }
+}
+@media screen and (max-width:490px){
+    .main-title{
+        font-size: 40px;
+    }
+    @keyframes slider {
+        0%{}
+        10%{transform: translate(-130%);}
+        20%{transform: translate(5%);}
+        30%{transform: translate(-130%);}
+        40%{transform: translate(5%);}
+        50%{transform: translate(-130%);}
+        60%{transform: translate(5%);}
+        70%{transform: translate(-130%);}
+        80%{transform: translate(5%);}
+        90%{transform: translate(-130%);}
+        100%{transform: translate(0%);}
+    }
+    #sliderImg{
+        height: 70%;
+    }
+    .big-container{
+        grid-template-rows: 27vh 63vh 10vh;
+    }
+    .footer-box{
+        flex-direction: column;   
+    }
+    .contact-footer, .projects-footer{
+        width: 100%;
+        height: 50%;
+    }
+    .projects-links{
+        height: 100%;
+    }
+}
+@media screen and (max-width:425px){
+    .main-title{
+        font-size: 35px;
+    }
+    .indi-logo{
+        height: 13vh;
+    }
+    .tech-logo{ 
+        height: 10vh;
+    }
+}
+@media screen and (max-width:375px){
+    .main-title{
+        font-size: 30px;
+    }
+    .navbar-links{
+        font-size: 25px;
+    }
+    .navbar-ul{
+        text-align: center;
+    }
 }
